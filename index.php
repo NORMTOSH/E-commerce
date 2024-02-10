@@ -147,7 +147,7 @@
 														</div></a>
 														<div class='product-body'>
 															<p class='product-category'>$category_name</p>
-															<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$name</a></h3>
+															<h3 class='product-name header-cart-item-name'><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h3>
 															<h4 class='product-price header-cart-item-info'>$price<del class='product-old-price'>$990.00</del></h4>
 															<div class='product-rating'>
 																<i class='fa fa-star'></i>
@@ -231,7 +231,7 @@
 														</div></a>
 														<div class='product-body'>
 															<p class='product-category'>$category_name</p>
-															<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$name</a></h3>
+															<h3 class='product-name header-cart-item-name'><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h3>
 															<h4 class='product-price header-cart-item-info'>$price<del class='product-old-price'>$990.00</del></h4>
 															<div class='product-rating'>
 																<i class='fa fa-star'></i>

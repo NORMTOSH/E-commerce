@@ -17,3 +17,4 @@
 <script src="dist/js/jquery.payform.min.js" charset="utf-8"></script>
 <script src="dist/js/script2.js"></script>
 <script src="dist/js/script.js"></script>
+<script src="dist/js/rating.js"></script>
