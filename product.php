@@ -7,7 +7,7 @@
 
 	try{
 		 		
-	    $stmt = $conn->prepare("SELECT *, products.name AS prodname, category.name AS catname, products.id AS prodid FROM products LEFT JOIN category ON category.id=products.category_id WHERE slug = :slug");
+	    $stmt = $conn->prepare("SELECT *, products.name AS prodname, category.name AS catname, category.cat_desc AS catdesc, products.id AS prodid FROM products LEFT JOIN category ON category.id=products.category_id WHERE slug = :slug");
 	    $stmt->execute(['slug' => $slug]);
 	    $product = $stmt->fetch();
 		
@@ -30,7 +30,7 @@
 ?>
 
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-yellow-light layout-top-nav">
+<body class="hold-transition skin-black-light layout-top-nav">
 <script>
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -92,8 +92,12 @@
 											</label>
 										</div>
 									</div>
-								
-			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+									
+									<button type="submit" class="add-to-cart-btn btn-lg btn-flat" style="background: #b29969; border: none; color: #fff;" onmouseover="this.style.border='2px solid #b29969'; this.style.backgroundColor='#fff'; this.style.color='#b29969'; this.style.transform='scale(0.9)';" onmouseout="this.style.border='none'; this.style.backgroundColor='#b29969'; this.style.color='#fff'; this.style.transform='scale(1)';">
+										<i class="fa fa-shopping-cart"></i> Add to Cart
+									</button>
+
+
 									
 			            		</div>
 		            		</form>
@@ -130,8 +134,8 @@
 							<div id="product-tab">
 								<!-- product tab nav -->
 								<ul class="tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-									<li><a data-toggle="tab" href="#tab2">Details</a></li>
+									<li class="active"><a href="category.php?category=<?php echo $product['cat_slug']; ?>"><?php echo $product['catname']; ?></a></li>
+									<li><a data-toggle="tab" href="#tab2">Projects</a></li>
 									<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
 								</ul>
 								<!-- /product tab nav -->
@@ -142,7 +146,7 @@
 									<div id="tab1" class="tab-pane fade in active">
 										<div class="row">
 											<div class="col-md-12">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												<p><a href="category.php?category=<?php echo $product['cat_slug']; ?>"><?php echo $product['catdesc']; ?></a></p>
 											</div>
 										</div>
 									</div>
@@ -409,8 +413,6 @@
 														<i class='fa fa-star'></i>
 													</div>
 													<div class='product-btns'>
-														<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-														<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
 														<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
 													</div>
 												</div>

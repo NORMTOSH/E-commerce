@@ -21,10 +21,12 @@
   	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Magnify -->
     <link rel="stylesheet" href="magnify/magnify.min.css">
+    
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/slider.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/box.css">
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
@@ -44,6 +46,9 @@
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/e05090259d.js" crossorigin="anonymous"></script>
 
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -12,23 +12,21 @@
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 .layout-boxed html,
 .layout-boxed body {
   height: 100%;
 }
-body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+
 /* Layout */
 .wrapper {
   height: 100%;
+  width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  background: transparent;
 }
 .wrapper:before,
 .wrapper:after {
@@ -95,11 +93,11 @@ body {
 }
 .content-wrapper {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: transparent;
   z-index: 800;
 }
 .main-footer {
-  background: #fff;
+  background: transparent;
   padding: 15px;
   color: #444;
   border-top: 1px solid #d2d6de;
@@ -152,6 +150,7 @@ body {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  background-color: transparent;
 }
 /* H1 - H6 font */
 h1,
@@ -1608,7 +1607,6 @@ a:focus {
   position: relative;
   border-radius: 3px;
   background: #ffffff;
-  border-top: 3px solid #d2d6de;
   margin-bottom: 20px;
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -1869,6 +1867,8 @@ a:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   padding: 10px;
+  border: 4px solid #eb0000;
+  
 }
 .no-header .box-body {
   border-top-right-radius: 3px;

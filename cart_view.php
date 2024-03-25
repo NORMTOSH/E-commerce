@@ -1,6 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-yellow-light layout-top-nav">
+<body class="hold-transition skin-black-light layout-top-nav">
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
@@ -170,7 +170,7 @@ paypal.Button.render({
     env: 'sandbox', // change for production if app is live,
 
 	client: {
-        sandbox:    'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
+        sandbox:    'AflUqHJ7RN7HGyZ4O2M-ypNA8XH-LOWTLRD0TABY1zQ00YqbebaBF3oIttn8GPZvQ0jJqAHpzR4WdNd3',
         //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
     },
 
@@ -178,7 +178,7 @@ paypal.Button.render({
 
     style: {
     	color: 'gold',
-    	size: 'small'
+    	size: 'medium'
     },
 
     payment: function(data, actions) {

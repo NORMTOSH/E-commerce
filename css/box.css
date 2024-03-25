@@ -1,0 +1,36 @@
+
+section#shiping {
+    padding: 0px;
+    background: white;
+    border-top: 0px solid #ceb990;
+    color: white;
+    text-align: center;
+}
+
+
+.box-icon {
+    display: inline-block;
+}
+
+.box-title {
+    display: inline-grid;
+    margin-left: 0px;
+}
+
+.box-title h3 {
+    font-size: 23px;
+    color: #ceb990;
+}
+
+.box-icon i {
+    color: #ceb990;
+    font-size: 30px;
+}
+.shipping-box {
+    background: #272727;
+    border: 1px solid #ceb990;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+

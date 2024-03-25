@@ -1,4 +1,17 @@
-<header class="main-header">
+<div id="top-header">
+  <div class="container">
+    <ul class="header-links pull-left">
+      <li><a href="#"><i class="fa fa-inr"></i><b>Natural Stones</b></a></li>
+    </ul>
+    <ul class="header-links pull-right">
+      <li><a href="#"><i class="fa fa-phone"></i> +254-712015672</a></li>
+      <li><a href="#"><i class="fa fa-envelope-o"></i> bvnaturalstone@gmail.com</a></li>
+      <li><a href="#"><i class="fa fa-map-marker"></i>Nairobi, Kenya</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
@@ -8,14 +21,12 @@
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.php">HOME</a></li>
-          <li><a href="">ABOUT US</a></li>
-          <li><a href="">CONTACT US</a></li>
+          <span></Span>
+          <li><a href="index.php">SHOP</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORY <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">OUR CATEGORIES<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <?php
              
@@ -38,6 +49,9 @@
               ?>
             </ul>
           </li>
+          <li><a href="gallery.php">PROJECTS</a></li>
+          <li><a href="about_us.php">ABOUT US</a></li>
+          <li><a href="about_us.php#contact_us">CONTACT US</a></li>
         </ul>
         <form method="POST" class="navbar-form navbar-left" action="search.php">
           <div class="input-group">
@@ -109,4 +123,4 @@
       </div>
     </div>
   </nav>
-</header>
+</div>

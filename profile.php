@@ -5,7 +5,7 @@
 	}
 ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-black-light layout-top-nav">
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
@@ -37,7 +37,7 @@
 	        			}
 	        		?>
 	        		<div class="box box-solid">
-	        			<div class="box-body">
+	        			<div class="box-body" style="background:white; border: 1.5px solid #ceb990; padding-top: 30px;">
 	        				<div class="col-sm-3">
 	        					<img src="<?php echo (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg'; ?>" width="100%">
 	        				</div>
@@ -53,7 +53,7 @@
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
 	        								<span class="pull-right">
-	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+	        									<a href="#edit" class="btn btn-warning btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>

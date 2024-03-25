@@ -54,6 +54,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Category Name</th>
+                  <th>Category Description</th>
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -67,6 +68,7 @@
                         echo "
                           <tr>
                             <td>".$row['name']."</td>
+                            <td>".$row['cat_desc']."</td>
                             <td>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
@@ -124,6 +126,7 @@ function getRow(id){
     success: function(response){
       $('.catid').val(response.id);
       $('#edit_name').val(response.name);
+      $('#edit_cat_desc').val(response.cat_desc); // Populate the category description in the edit modal
       $('.catname').html(response.name);
     }
   });

@@ -81,29 +81,47 @@ $(document).ready(function () {
     diff = 0;
     $slider.addClass('animation');
     $slider.css({
-      'transform': 'translate3d(-' + (curSlide - direction) * 100 + '%, 0, 0)' });
-
+      'transform': 'translate3d(-' + (curSlide - direction) * 100 + '%, 0, 0)'
+    });
 
     $slider.find('.slide__darkbg').css({
-      'transform': 'translate3d(' + (curSlide - direction) * 50 + '%, 0, 0)' });
-
+      'transform': 'translate3d(' + (curSlide - direction) * 50 + '%, 0, 0)'
+    });
 
     $slider.find('.slide__letter').css({
-      'transform': 'translate3d(0, 0, 0)' });
-
+      'transform': 'translate3d(0, 0, 0)'
+    });
 
     $slider.find('.slide__text').css({
-      'transform': 'translate3d(0, 0, 0)' });
+      'transform': 'translate3d(0, 0, 0)'
+    });
 
+    if (curSlide === 0) {
+      curSlide = numOfCities;
+      setTimeout(() => {
+        $slider.removeClass('animation');
+        $slider.css({
+          'transform': 'translate3d(-' + numOfCities * 100 + '%, 0, 0)'
+        });
+      }, animSpd);
+    } else if (curSlide === numOfCities + 1) {
+      curSlide = 1;
+      setTimeout(() => {
+        $slider.removeClass('animation');
+        $slider.css({
+          'transform': 'translate3d(-' + 100 + '%, 0, 0)'
+        });
+      }, animSpd);
+    }
   }
 
-// Automate slides
+  // Automate slides
   let autoPlayInterval;
 
   function startAutoPlay() {
     autoPlayInterval = setInterval(function () {
       navigateRight();
-    }, 5000); // Adjust the interval (in milliseconds) as needed
+    }, 100000); // Adjust the interval (in milliseconds) as needed
   }
 
   function stopAutoPlay() {
@@ -115,19 +133,23 @@ $(document).ready(function () {
 
   function navigateRight() {
     if (!autoScrollVar) return;
-    if (curSlide >= numOfCities) return;
+    curSlide++;
+    if (curSlide > numOfCities) {
+      curSlide = 1; // Reset to the first slide
+    }
     pagination(0);
     setTimeout(timeout, animSpd);
-    bullets(curSlide + 1);
-    curSlide++;
+    bullets(curSlide);
   }
 
   function navigateLeft() {
-    if (curSlide <= 1) return;
+    curSlide--;
+    if (curSlide < 1) {
+      curSlide = numOfCities; // Reset to the last slide
+    }
     pagination(2);
     setTimeout(timeout, animSpd);
-    bullets(curSlide - 1);
-    curSlide--;
+    bullets(curSlide);
   }
 
   function toDefault() {
@@ -148,19 +170,20 @@ $(document).ready(function () {
       if (target === 1 && diff < 0 || target === numOfCities && diff > 0) return;
 
       $slider.css({
-        'transform': 'translate3d(-' + ((curSlide - 1) * 100 + diff / 30) + '%, 0, 0)' });
-
+        'transform': 'translate3d(-' + ((curSlide - 1) * 100 + diff / 30) + '%, 0, 0)'
+      });
 
       $slider.find('.slide__darkbg').css({
-        'transform': 'translate3d(' + ((curSlide - 1) * 50 + diff / 60) + '%, 0, 0)' });
-
+        'transform': 'translate3d(' + ((curSlide - 1) * 50 + diff / 60) + '%, 0, 0)'
+      });
 
       $slider.find('.slide__letter').css({
-        'transform': 'translate3d(' + diff / 60 + 'vw, 0, 0)' });
-
+        'transform': 'translate3d(' + diff / 60 + 'vw, 0, 0)'
+      });
 
       $slider.find('.slide__text').css({
-        'transform': 'translate3d(' + diff / 15 + 'px, 0, 0)' });
+        'transform': 'translate3d(' + diff / 15 + 'px, 0, 0)'
+      });
 
     });
   });
@@ -204,5 +227,28 @@ $(document).ready(function () {
 
     if (delta > 0 || e.originalEvent.detail < 0) navigateLeft();
     if (delta < 0 || e.originalEvent.detail > 0) navigateRight();
+  });
+
+  $(document).ready(function () {
+    $("a").on("click", function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+  
+        var hash = this.hash;
+        $("html, body").animate(
+          {
+            scrollTop: $(hash).offset().top,
+          },
+          800,
+          function () {
+            window.location.hash = hash;
+          }
+        );
+      }
+    });
+  });
+  
+  $(".menu-items a").click(function () {
+    $("#checkbox").prop("checked", false);
   });
 });

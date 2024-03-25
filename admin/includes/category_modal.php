@@ -11,15 +11,20 @@
               <form class="form-horizontal" method="POST" action="category_add.php">
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Name</label>
-
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="name" name="name" required>
                     </div>
+
+                    <label for="cat_desc" class="col-sm-3 control-label">Description</label>
+                    <div class="col-sm-9">
+                      <textarea id="editor1" name="cat_desc" rows="10" cols="80" required></textarea>
+                    </div>
+
                 </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+              <button type="submit" class="btn btn-warning btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
               </form>
             </div>
         </div>
@@ -40,9 +45,13 @@
                 <input type="hidden" class="catid" name="id">
                 <div class="form-group">
                     <label for="edit_name" class="col-sm-3 control-label">Name</label>
-
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_name" name="name">
+                    </div>
+
+                    <label for="edit_cat_desc" class="col-sm-3 control-label">Description</label>
+                    <div class="col-sm-9">
+                      <textarea class="form-control" id="editor2" name="cat_desc" rows="10" cols="80"></textarea>
                     </div>
                 </div>
             </div>
@@ -54,6 +63,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">
